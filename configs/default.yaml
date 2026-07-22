@@ -1,0 +1,40 @@
+
+img_size: 384
+mobilesam_checkpoint: weights/mobilesamv2/mobile_sam.pt
+yolo11n_checkpoint: weights/yolo11n.pt
+prompt_guided_decoder_checkpoint: MobileSAM/MobileSAMv2/PromptGuidedDecoder/Prompt_guided_Mask_Decoder.pt
+
+train_root: data/UAV-SOD
+train_image_folder: image
+train_gt_folder: mask
+
+val_root: null
+val_image_folder: images
+val_gt_folder: gt
+
+test_root: data/test
+test_image_folder: image
+test_gt_folder: mask
+
+
+batch_size: 16
+epochs: 120
+module_lr: 0.0005
+backbone_lr_ratio: 0.1
+module_min_lr: 0.000001
+weight_decay: 0.0001
+num_workers: 6
+sal_weight: 1.0
+global_weight: 0.2
+lr_warmup_epochs: 5
+log_interval: 20
+save_dir: checkpoints
+resume: null
+
+# ---- Inference ----
+checkpoint: checkpoints/last.pth
+output_dir: outputs
+
+
+seed: 42
+device: auto
