@@ -35,7 +35,6 @@ data/
     └── mask/
 ```
 
-The dataset will be made publicly available following the publication of the paper.
 
 ![Detection Examples](assets/fig03_examples_01.png)
 
